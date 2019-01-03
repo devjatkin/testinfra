@@ -147,7 +147,7 @@ if _ansible_version[0] == 2:
 
 class AnsibleRunnerV2(AnsibleRunnerBase):
 
-    def __init__(self, host_list=None):
+    def __init__(self, host_list=None, **kwargs):
         super(AnsibleRunnerV2, self).__init__(host_list)
         self.cli = ansible.cli.playbook.PlaybookCLI(None)
         self.cli.options = self.cli.base_parser(
