@@ -164,6 +164,7 @@ class AnsibleRunnerV2(AnsibleRunnerBase):
         ).parse_args([])[0]
         self.cli.normalize_become_options()
         self.cli.options.connection = "smart"
+        self.cli.oprions.basedir = kwargs.get('ansible_playbook_dir', None)
         if _ansible_version[1] >= 4:  # ansible >= 2.4
             self.cli.options.inventory = host_list
             # pylint: disable=protected-access

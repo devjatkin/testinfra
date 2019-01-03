@@ -127,6 +127,12 @@ def pytest_addoption(parser):
         help="Ansible inventory file",
     )
     group.addoption(
+        "--ansible-playbook-dir",
+        action="store",
+        dest="ansible_playbook_dir",
+        help="Ansible playbook dir, path many features including roles/ group_vars/ etc.",
+    )
+    group.addoption(
         "--nagios",
         action="store_true",
         dest="nagios",
