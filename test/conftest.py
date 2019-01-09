@@ -99,6 +99,10 @@ def setup_ansible_config(tmpdir, name, host, user, port, key):
         "myhostvar: should_be_overriden\n"
         "mygroupvar: qux\n"
     ))
+    tmpdir.join("group_vars").join("all").write((
+        "---\n"
+        "mygroupallvar: tere"
+    ))
     vault_password_file = tmpdir.join("vault-pass.txt")
     vault_password_file.write("polichinelle\n")
     ansible_cfg = tmpdir.join("ansible.cfg")

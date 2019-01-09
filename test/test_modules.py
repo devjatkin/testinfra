@@ -333,6 +333,7 @@ def test_ansible_module(host):
     assert variables["myvar"] == "foo"
     assert variables["myhostvar"] == "bar"
     assert variables["mygroupvar"] == "qux"
+    assert variables["mygroupallvar"] == "tere"
     assert variables["inventory_hostname"] == "debian_stretch"
     assert variables["group_names"] == ["testgroup"]
 
